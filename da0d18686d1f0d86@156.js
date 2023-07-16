@@ -225,7 +225,7 @@ async function drawChart() {
     .attr("y2", 37)
   const maleLegend = legendGroup.append("g")
     .attr("transform", `translate(${-dimensions.endsBarsWidth / 2 - 4}, 0)`)
-  maleLegend.append("rect")
+  maleLegend.append("square")
     .attr("r", 5.5)
     .attr("transform", "translate(5, 0)")
   maleLegend.append("text")
@@ -243,7 +243,7 @@ async function drawChart() {
   // draw data
   const maleMarkers = endingLabelsGroup.selectAll(".male-marker")
     .data(educationIds)
-    .enter().append("circle")
+    .enter().append("square")
       .attr("class", "ending-marker male-marker")
       .attr("r", 5.5)
       .attr("cx", 5)
@@ -275,13 +275,13 @@ async function drawChart() {
       ]
     }
     
-    const females = markersGroup.selectAll(".marker-circle")
+    const females = markersGroup.selectAll(".marker-square")
       .data(people.filter(d => (
         xProgressAccessor(d) < 1
         && sexAccessor(d) == 0
       )), d => d.id)
-    females.enter().append("circle")
-      .attr("class", "marker marker-circle")
+    females.enter().append("square")
+      .attr("class", "marker marker-square")
       .attr("r", 5.5)
       .style("opacity", 0)
     females.exit().remove()
