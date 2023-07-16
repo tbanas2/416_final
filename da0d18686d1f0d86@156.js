@@ -27,7 +27,7 @@ function* _3(html,drawChart)
 function _drawChart(d3,getStatusKey,getRandomValue,getRandomNumberInRange,width,sentenceCase){return(
 async function drawChart() {
   // Data
-  const dataset = await d3.json("https://gist.githubusercontent.com/chekos/71684338933702eaf1fc8fe2c65ac37d/raw/ea15ca6316a27e715d9284f7b722deb53f64c084/education.json")
+  const dataset = await d3.json("./data.json")
   // Accessors
   const sexAccessor = d => d.sex
   const sexes = ["female", "male"]
