@@ -187,7 +187,7 @@ async function drawChart() {
     .text("Status")
   const startingBars = startingLabelsGroup.selectAll(".start-bar")
     .data(sesIds)
-    .enter().append("rect")
+    .enter().append("square")
       .attr("x", 20)
       .attr("y", d => startYScale(d) - (dimensions.pathHeight / 2))
       .attr("width", dimensions.endsBarsWidth)
