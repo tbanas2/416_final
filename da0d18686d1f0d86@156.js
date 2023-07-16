@@ -45,7 +45,7 @@ async function drawChart() {
   const educationIds = d3.range(educationNames.length)
   
   const sesAccessor = d => d.ses
-  const sesNames = ["low", "middle", "high"]
+  const sesNames = ["low", "middle"]
   const sesIds = d3.range(sesNames.length)
   
   // probabilities
@@ -225,7 +225,7 @@ async function drawChart() {
     .attr("y2", 37)
   const maleLegend = legendGroup.append("g")
     .attr("transform", `translate(${-dimensions.endsBarsWidth / 2 - 4}, 0)`)
-  maleLegend.append("circle")
+  maleLegend.append("rect")
     .attr("r", 5.5)
     .attr("transform", "translate(5, 0)")
   maleLegend.append("text")
